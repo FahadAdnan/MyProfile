@@ -22,8 +22,8 @@ import com.google.firebase.database.FirebaseDatabase;
 public class RegistrationActivity extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuthe;
-    private Button buttonregister;
-    private EditText usernameer, emailer,passworder,coiner;
+    private Button btnRegister;
+    private EditText inUsername, inEmail,inPassword,inCoin;
     private TextView alreadylogin;
     private ProgressDialog progressDialog;
 
@@ -33,28 +33,27 @@ public class RegistrationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_registration);
 
         progressDialog = new ProgressDialog(this);
-        buttonregister = (Button)findViewById(R.id.buttonregister);
-        usernameer = (EditText) findViewById(R.id.user);
-        emailer = (EditText) findViewById(R.id.email);
-        passworder = (EditText) findViewById(R.id.password);
-        coiner = (EditText) findViewById(R.id.coin);
+        btnRegister = (Button)findViewById(R.id.buttonregister);
+        inUsername = (EditText) findViewById(R.id.user);
+        inEmail = (EditText) findViewById(R.id.email);
+        inPassword = (EditText) findViewById(R.id.password);
+        inCoin = (EditText) findViewById(R.id.coin);
         alreadylogin = findViewById(R.id.alreadylogin);
     }
 
     public void onStart() {
         super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
         firebaseAuthe = FirebaseAuth.getInstance();
         if (firebaseAuthe.getCurrentUser() != null){
-            //finish();
-            //startActivity(new Intent(this, ProfileActivity.class));
+            finish();
+            startActivity(new Intent(this, LoginActivity.class));
         }
     }
     private void registerUser() {
-        final String name = usernameer.getText().toString().trim();
-        final String email = emailer.getText().toString().trim();
-        final String password = passworder.getText().toString().trim();
-        final String coin = coiner.getText().toString().trim();
+        final String name = inUsername.getText().toString().trim();
+        final String email = inEmail.getText().toString().trim();
+        final String password = inPassword.getText().toString().trim();
+        final String coin = inCoin.getText().toString().trim();
         final String age = "0";
         final String points = "rando";
         final String bio = "no bio yet";
@@ -69,11 +68,11 @@ public class RegistrationActivity extends AppCompatActivity {
             return;
         }
         if (TextUtils.isEmpty(email)) {
-            Toast.makeText(RegistrationActivity.this, "NOT A VALID EMAIL", Toast.LENGTH_SHORT).show();
+            Toast.makeText(RegistrationActivity.this, "Not a valid Email", Toast.LENGTH_SHORT).show();
             return;
         }
         if (TextUtils.isEmpty(password)) {
-            Toast.makeText(RegistrationActivity.this, "NOT A VALID PASSWORD", Toast.LENGTH_SHORT).show();
+            Toast.makeText(RegistrationActivity.this, "Not a valid Password", Toast.LENGTH_SHORT).show();
             return;
         }
         if (TextUtils.isEmpty(coin)) {
@@ -94,9 +93,7 @@ public class RegistrationActivity extends AppCompatActivity {
                             return;
                         }
 
-
                         if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
                             User currentuser = new User(name, email, coin, points, bio, facebook, snapchat, instagram, age);
 
                             FirebaseDatabase.getInstance().getReference("Users")
@@ -117,9 +114,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
     public void buttonregister(View view) {
         registerUser();
-        //Log.e("WOW", "WOOOOW");
     }
-
 
     public void alreadylogin(View view){
         finish();
