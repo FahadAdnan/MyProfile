@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+    <LinearLayout
+        android:id = "@+id/layout"
+        android:layout_centerVertical="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_above="@+id/layout1">
+
+        <TextView
+            android:id="@+id/Title"
+            android:text = "Sign in "
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textColor = "@color/black">
+        </TextView>
+
+
+        <View
+            android:layout_below="@id/Title"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/black"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id = "@+id/layout1"
+        android:layout_centerVertical="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_above="@id/layout3"
+        android:padding = "10dp">
+
+        <EditText
+            android:inputType="textEmailAddress"
+            android:id="@+id/emaili"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:maxLines = "1"
+            android:hint="Enter email" />
+
+        <EditText
+            android:inputType="textPassword"
+            android:id ="@+id/passwordi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines = "1"
+            android:layout_margin="15dp"
+            android:hint="Enter password" />
+
+
+        <Button
+            android:id="@+id/buttonsignin"
+            android:onClick = "buttonsignin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sign in" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout3"
+        android:layout_centerVertical="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/forgotpassword"
+            android:onClick = "forgotpassword"
+            android:text = "Forgot Password"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:textColor = "@color/black">
+        </TextView>
+
+        <TextView
+            android:id="@+id/notregistered"
+            android:onClick = "notregistered"
+            android:text = "Register Here"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_margin="10dp"
+            android:textColor = "@color/black">
+        </TextView>
+
+    </LinearLayout>
+</RelativeLayout>

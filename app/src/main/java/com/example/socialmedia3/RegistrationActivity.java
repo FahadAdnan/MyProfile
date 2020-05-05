@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -45,7 +46,7 @@ public class RegistrationActivity extends AppCompatActivity {
         // Check if user is signed in (non-null) and update UI accordingly.
         firebaseAuthe = FirebaseAuth.getInstance();
         if (firebaseAuthe.getCurrentUser() != null){
-            finish();
+            //finish();
             //startActivity(new Intent(this, ProfileActivity.class));
         }
     }
@@ -122,8 +123,8 @@ public class RegistrationActivity extends AppCompatActivity {
 
     public void alreadylogin(View view){
         finish();
-        //   Intent startloginpls = new Intent(this, LoginActivity.class);
-        //  startActivity(startloginpls);
+        Intent startloginpls = new Intent(this, LoginActivity.class);
+        startActivity(startloginpls);
     }
 
 }
