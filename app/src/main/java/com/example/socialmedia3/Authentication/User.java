@@ -1,4 +1,4 @@
-package com.example.socialmedia3;
+package com.example.socialmedia3.Authentication;
 
 
 public class User {

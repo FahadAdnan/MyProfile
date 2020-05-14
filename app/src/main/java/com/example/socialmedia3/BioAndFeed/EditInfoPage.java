@@ -1,4 +1,4 @@
-package com.example.socialmedia3;
+package com.example.socialmedia3.BioAndFeed;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
+import com.example.socialmedia3.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -82,8 +83,8 @@ public class EditInfoPage extends AppCompatActivity {
                 Log.d("Users", databaseError.getMessage());
             }
         });
-      //  Intent backToBio = new Intent(this, biopage.class);
-      //  startActivity(backToBio);
+        Intent backToBio = new Intent(this, BioPage.class);
+        startActivity(backToBio);
     }
 
 }

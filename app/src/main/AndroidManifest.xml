@@ -9,12 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EditInfoPage"></activity>
-        <activity android:name=".ChangePassword" />
-        <activity android:name=".ForgotPassword" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".RegistrationActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".BioAndFeed.MainFeed"></activity>
+        <activity android:name=".BioAndFeed.BioPage" />
+        <activity android:name=".BioAndFeed.EditInfoPage" />
+        <activity android:name=".Authentication.ChangePassword" />
+        <activity android:name=".Authentication.ForgotPassword" />
+        <activity android:name=".Authentication.LoginActivity" />
+        <activity android:name=".Authentication.RegistrationActivity" />
+        <activity android:name=".BioAndFeed.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
